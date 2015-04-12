@@ -5,3 +5,9 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+author = Author.create! username: "admin", email: "admin@local.host"
+Article.create! title: Lorem::Base.new(:words, 5).output,
+                author: author,
+                teaser: Lorem::Base.new(:words, 20).output,
+                content: Lorem::Base.new(:paragraphs, 5).output

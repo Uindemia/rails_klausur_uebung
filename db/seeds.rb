@@ -7,7 +7,13 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 author = Author.create! username: "admin", email: "admin@local.host"
-Article.create! title: Lorem::Base.new(:words, 5).output,
+article = Article.create! title: Faker::Lorem.sentence,
                 author: author,
-                teaser: Lorem::Base.new(:words, 20).output,
-                content: Lorem::Base.new(:paragraphs, 5).output
+                teaser: Faker::Hacker.say_something_smart,
+                content: Faker::Lorem.paragraphs(rand(3..9)).join("\n"),
+                publish_at: 2.weeks.ago,
+                publish_until: 2.years.from_now
+
+article.categories << Category.find_or_create_by(name: "Cat 1")
+article.categories << Category.find_or_create_by(name: "Cat 2")
+article.categories << Category.find_or_create_by(name: "Cat 3")

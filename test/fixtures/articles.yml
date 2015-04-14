@@ -1,0 +1,40 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  teaser: <%= Faker::Hacker.say_something_smart %>
+  content: MyText
+  publish_at: <%= 2.weeks.ago %>
+  publish_until: <%= 5.weeks.from_now %>
+  author: one
+  categories: one, two
+
+two:
+  title: MyString
+  teaser: <%= Faker::Hacker.say_something_smart %>
+  content: MyText
+  publish_at: <%= 2.weeks.ago %>
+  publish_until: <%= 5.weeks.from_now %>
+  author: two
+  categories: one, two
+
+expired:
+  title: Expired
+  teaser: <%= Faker::Hacker.say_something_smart %>
+  author: one
+  publish_at: <%= 5.weeks.ago %>
+  publish_until: <%= 2.weeks.ago %>
+
+future:
+  title: Future
+  teaser: <%= Faker::Hacker.say_something_smart %>
+  author: one
+  publish_at: <%= 1.weeks.from_now %>
+  publish_until: <%= 2.weeks.from_now %>
+
+invalid_dates:
+  title: Invalid
+  teaser: <%= Faker::Hacker.say_something_smart %>
+  author: one
+  publish_at: <%= 2.weeks.from_now %>
+  publish_until: <%= 2.weeks.ago %>

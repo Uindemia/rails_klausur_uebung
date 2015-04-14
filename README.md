@@ -14,13 +14,20 @@
         * Rails Command Line Tools and Rake Tasks
         * Asset Pipeline
         * Working with JavaScript in Rails
+    * Testing (http://guides.rubyonrails.org/testing.html)
+* Diese Themen sollten präsent sein:
+    * CSS-Selektoren
+    * Scopes
+    * Scaffolding
+    * Sessions
 
 * Generiere die folgenden Modelle (Option -s verwenden!):
     * Article
         * title - string
         * teaser - string
-        * content - string
+        * content - text
         * publish_at - datetime
+        * publish_until - datetime
         * Wird verfasst von einem Author
         * Hat viele Kategorien
     * Author

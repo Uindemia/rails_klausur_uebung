@@ -1,0 +1,33 @@
+p#notice = notice
+
+.ui.ribbon.label
+  h1=@article.title
+
+=@article.categories.each do |category|
+  =<> link_to category.name, category_path(category), class: 'ui button'
+p
+  b=@article.teaser
+
+p=@article.content
+p
+  strong Title:
+  = @article.title
+p
+  strong Teaser:
+  = @article.teaser
+p
+  strong Content:
+  = @article.content
+p
+  strong Publish at:
+  = @article.publish_at
+p
+  strong Publish until:
+  = @article.publish_until
+p
+  strong Author:
+  = @article.author
+
+= link_to 'Edit', edit_article_path(@article)
+'|
+= link_to 'Back', articles_path

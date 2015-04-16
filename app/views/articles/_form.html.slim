@@ -1,0 +1,27 @@
+= form_for @article, html: {class: 'ui form'} do |f|
+  - if @article.errors.any?
+    #error_explanation
+      h2 = "#{pluralize(@article.errors.count, "error")} prohibited this article from being saved:"
+      ul
+        - @article.errors.full_messages.each do |message|
+          li = message
+
+  .field
+    = f.label :title
+    = f.text_field :title
+  .field
+    = f.label :teaser
+    = f.text_field :teaser
+  .field
+    = f.label :content
+    = f.text_area :content
+  .field
+    = f.label :publish_at
+    = f.datetime_select :publish_at
+  .field
+    = f.label :publish_until
+    = f.datetime_select :publish_until
+  .field
+    = f.label :author
+    = f.collection_select :author, Author.all.pluck(:id, :username), :first, :last
+  .actions = f.submit

@@ -1,0 +1,9 @@
+h1 Listing categories
+
+.ui.divided.animated.list
+  - @categories.each do |category|
+    a.item = category.name
+
+br
+
+= link_to 'New Category', new_category_path

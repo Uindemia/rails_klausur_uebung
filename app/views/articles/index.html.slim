@@ -1,0 +1,12 @@
+h1 Listing articles
+
+- @articles.each do |article|
+  section.ui.segment data-id=article.id
+    .ui.ribbon.label
+      h1
+        =link_to article.title, article_path(article)
+    .ui.buttons
+      -article.categories.each do |category|
+        =link_to category.name, category_path(category), class: 'ui button'
+
+= link_to 'New Article', new_article_path

@@ -19,6 +19,7 @@
     * CSS-Selektoren
     * Scopes
     * Scaffolding
+    * Migrations
     * Sessions
 
 * Generiere die folgenden Modelle (Option -s verwenden!):
